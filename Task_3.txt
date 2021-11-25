@@ -1,4 +1,4 @@
 Ivanov 34000
 Petrov 56000
-Sidorov 24000
+Sidorov 14000
 Andreev 95000

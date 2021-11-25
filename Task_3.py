@@ -1,17 +1,15 @@
-def split_list(income, size):
-    name1 = []
-    while len(income) > size:
-        piece = income[:size]
-        name1.append(piece)
-        income = income[size:]
-        name1.append(income)
-        return name1
-
-
 with open("Task_3.txt", "r") as income:
-    name_1 = income.readlines()
-    print(name_1)
-    i = 1
-    for name_1 in range(1, 4):
-        name_1 = split_list(name_1, i)
-        i = i + 1
+    less20 = []
+    salary_each = []
+
+    income_each = income.read().split('\n')
+    for each in income_each:
+        each = each.split()
+        salary_each.append(each[1])
+    for each in income_each:
+
+        each = each.split()
+        if int(each[1]) < 20000:
+            less20.append(each[0])
+    print(salary_each)
+    print(f"Оклад меньше 20.000 имеют: {less20}. {sum(map(int, salary_each)) / len(salary_each)}")
