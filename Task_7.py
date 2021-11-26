@@ -8,12 +8,8 @@ with open('Task_7.txt', 'r+') as firm_list:
             income_dict_firm.update({parts[1]: income})
         else:
             rub_dict_firm.update({parts[1]: income})
-    income_dict = {"Average" : str(sum(map(int, income_dict_firm.values())))}
+    income_dict = {"Average": str(sum(map(int, income_dict_firm.values())))}
     income_dict_firm.update(rub_dict_firm)
     income_dict_firm.update(income_dict)
-import json
-with open('Task_7j.json', 'w') as dict_json:
-    json.dump(income_dict_firm, dict_json)
-
-
-
+    import json
+    json.dump(income_dict_firm, firm_list)
